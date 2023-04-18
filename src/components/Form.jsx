@@ -45,7 +45,7 @@ export default function Form({ handleAddTodo }) {
         <option value="Work">Work</option>
         <option value="Social">Social</option>
       </select>
-      <button type="submit">+</button>
+      <button type="submit">➕</button>
     </form>
   );
 }
