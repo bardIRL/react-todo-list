@@ -10,11 +10,17 @@ export default function App() {
     setTodos([...todos, formData]);
   };
 
+  const handleDeleteTodo = function (index) {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
   return (
     <div className="App">
       <header></header>
       <Form handleAddTodo={handleAddTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
     </div>
   );
 }
