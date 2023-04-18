@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Form({ handleFormSubmit }) {
+export default function Form({ handleAddTodo }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("normal");
 
   const handleSubmit = function (event) {
     event.preventDefault();
-    handleFormSubmit({ title, description, priority });
+    handleAddTodo({ title, description, priority });
     setTitle("");
     setDescription("");
     setPriority("normal");

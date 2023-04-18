@@ -2,14 +2,17 @@ import React from "react";
 import Form from "./components/Form";
 
 export default function App() {
-  const handleFormSubmit = function (formData) {
-    console.log(formData);
+  const todos = [];
+
+  const handleAddTodo = function (formData) {
+    todos.push(formData);
+    console.log(todos);
   };
 
   return (
     <div className="App">
       <header></header>
-      <Form handleFormSubmit={handleFormSubmit} />
+      <Form handleAddTodo={handleAddTodo} />
     </div>
   );
 }
