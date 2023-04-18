@@ -6,12 +6,14 @@ export default function TodoItem({ index, todo, handleDeleteTodo }) {
   };
 
   return (
-    <div key={index}>
+    <div className="card" key={index}>
       <h2>{todo.title}</h2>
       <p>
-        {todo.category} | {todo.description}
+        <strong>{todo.category}</strong> | {todo.description}
       </p>
-      <button onClick={handleDelete}>X</button>
+      <button className="delete-btn" onClick={handleDelete}>
+        ✔️
+      </button>
     </div>
   );
 }

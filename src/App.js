@@ -18,7 +18,9 @@ export default function App() {
 
   return (
     <div className="App">
-      <header></header>
+      <header>
+        <h1>To-Doodle</h1>
+      </header>
       <Form handleAddTodo={handleAddTodo} />
       <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
     </div>

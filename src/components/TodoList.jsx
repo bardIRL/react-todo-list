@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 export default function TodoList({ todos, handleDeleteTodo }) {
   return (
-    <div>
+    <div className="cards-container">
       {todos.map((todo, index) => (
         <TodoItem
           key={index}
