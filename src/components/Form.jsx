@@ -21,6 +21,7 @@ export default function Form({ handleAddTodo }) {
         name="title"
         type="text"
         value={title}
+        required
         onChange={(event) => setTitle(event.target.value)}
       ></input>
       <label htmlFor="description">Description</label>
@@ -34,6 +35,7 @@ export default function Form({ handleAddTodo }) {
       <select
         name="category"
         value={category}
+        required
         onChange={(event) => setCategory(event.target.value)}
       >
         <option default value="">
