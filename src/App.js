@@ -1,18 +1,20 @@
 import React from "react";
+import { useState } from "react";
 import Form from "./components/Form";
+import TodoList from "./components/TodoList";
 
 export default function App() {
-  const todos = [];
+  const [todos, setTodos] = useState([]);
 
   const handleAddTodo = function (formData) {
-    todos.push(formData);
-    console.log(todos);
+    setTodos([...todos, formData]);
   };
 
   return (
     <div className="App">
       <header></header>
       <Form handleAddTodo={handleAddTodo} />
+      <TodoList todos={todos} />
     </div>
   );
 }

@@ -4,14 +4,14 @@ import { useState } from "react";
 export default function Form({ handleAddTodo }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("normal");
+  const [category, setCategory] = useState("");
 
   const handleSubmit = function (event) {
     event.preventDefault();
-    handleAddTodo({ title, description, priority });
+    handleAddTodo({ title, description, category });
     setTitle("");
     setDescription("");
-    setPriority("normal");
+    setCategory("");
   };
 
   return (
@@ -30,15 +30,18 @@ export default function Form({ handleAddTodo }) {
         value={description}
         onChange={(event) => setDescription(event.target.value)}
       ></input>
-      <label htmlFor="priority">Priority</label>
+      <label htmlFor="category">Category</label>
       <select
-        name="priority"
-        value={priority}
-        onChange={(event) => setPriority(event.target.value)}
+        name="category"
+        value={category}
+        onChange={(event) => setCategory(event.target.value)}
       >
-        <option value="highest">Highest</option>
-        <option value="normal">Normal</option>
-        <option value="lowest">Lowest</option>
+        <option default value="">
+          -- Select category --
+        </option>
+        <option value="Home">Home</option>
+        <option value="Work">Work</option>
+        <option value="Social">Social</option>
       </select>
       <button type="submit">+</button>
     </form>
